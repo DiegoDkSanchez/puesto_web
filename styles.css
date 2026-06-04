@@ -814,6 +814,12 @@ section {
   flex-direction: column;
 }
 
+.delete-account-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-nav-actions {
   display: flex;
   align-items: center;
@@ -828,7 +834,18 @@ section {
   overflow: hidden;
 }
 
+.delete-account-main {
+  flex: 1;
+  padding: 140px 5% 80px;
+  position: relative;
+  overflow: hidden;
+}
+
 .download-blob {
+  top: -220px;
+}
+
+.delete-account-blob {
   top: -220px;
 }
 
@@ -848,6 +865,22 @@ section {
   overflow: hidden;
 }
 
+.delete-account-panel {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 32px;
+  padding: 52px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
 .download-panel::before {
   content: "";
   position: absolute;
@@ -856,6 +889,106 @@ section {
   height: 320px;
   border-radius: 50%;
   background: rgba(34, 197, 94, 0.08);
+}
+
+.delete-account-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto -120px -120px auto;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.delete-account-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.delete-account-copy h1 {
+  font-family: var(--font);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  color: var(--sky-deep);
+  max-width: 640px;
+  letter-spacing: -2px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.delete-account-copy > p {
+  margin-top: 22px;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--ink-muted);
+  max-width: 540px;
+  line-height: 1.75;
+  font-weight: 400;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.delete-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 36px;
+  list-style: none;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+.delete-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, rgba(247, 249, 252, 0.96), rgba(240, 244, 248, 0.9));
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.delete-steps h2 {
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--sky-deep);
+  letter-spacing: -0.3px;
+}
+
+.delete-steps p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.delete-account-preview {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.8s 0.25s ease both;
+}
+
+.delete-account-shell {
+  width: 280px;
+}
+
+.delete-account-image {
+  width: 260px;
 }
 
 .download-store-grid {
@@ -1069,7 +1202,8 @@ footer {
 
 @media (max-width: 900px) {
   .screens-inner,
-  .download-panel {
+  .download-panel,
+  .delete-account-panel {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
@@ -1080,8 +1214,13 @@ footer {
   }
 
   .screens-text p,
-  .download-copy p {
+  .download-copy p,
+  .delete-account-copy > p {
     max-width: none;
+  }
+
+  .delete-steps {
+    text-align: left;
   }
 
   .screens-phone .phone-shell {
@@ -1151,7 +1290,12 @@ footer {
     padding-top: 120px;
   }
 
-  .download-panel {
+  .delete-account-main {
+    padding-top: 120px;
+  }
+
+  .download-panel,
+  .delete-account-panel {
     padding: 40px 28px;
   }
 

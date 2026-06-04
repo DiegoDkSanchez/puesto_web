@@ -3,49 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Descarga Puesto App</title>
+  <title>Eliminar cuenta | Puesto App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="download-page">
+<body class="delete-account-page">
   <nav>
     <a href="index.html" class="logo-link" aria-label="Ir al inicio">
       <img src="Puesto%20App.png" alt="Puesto App" class="logo-img" />
     </a>
+    <a class="btn-nav" href="descarga.html">Descargar app</a>
   </nav>
 
-  <main class="download-main">
-    <div class="hero-blob download-blob"></div>
+  <main class="delete-account-main">
+    <div class="hero-blob delete-account-blob"></div>
 
-    <section class="download-panel">
-      <div class="download-copy">
+    <section class="delete-account-panel">
+      <div class="delete-account-copy">
         <div class="badge">
           <div class="badge-dot"></div>
-          Descarga disponible
+          Gestión de cuenta
         </div>
-        <h1>Descarga Puesto y empieza a agendar desde tu celular</h1>
+        <h1>Cómo eliminar tu cuenta en Puesto</h1>
+        <p>Si deseas borrar tu cuenta y tu información de la app, sigue estos pasos desde tu perfil.</p>
+
+        <ol class="delete-steps" aria-label="Pasos para eliminar una cuenta">
+          <li>
+            <span class="step-number">1</span>
+            <div>
+              <h2>Navega a la pantalla de perfil</h2>
+              <p>Abre Puesto y entra a tu perfil desde la app.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <div>
+              <h2>Toca eliminar cuenta</h2>
+              <p>Selecciona la opción para eliminar tu cuenta dentro de la pantalla de perfil.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <div>
+              <h2>Confirma la eliminación</h2>
+              <p>Confirma que realmente quieres eliminar tu información de la app.</p>
+            </div>
+          </li>
+        </ol>
       </div>
 
-      <div class="download-store-grid">
-        <a class="store-card android" href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer">
-          <span class="platform-badge">Android</span>
-          <h2>Google Play</h2>
-          <p>Abre Google Play desde tu dispositivo Android para descargar la app y comenzar a reservar en segundos.</p>
-          <span class="store-button">Descargar para Android</span>
-        </a>
-
-        <a class="store-card ios" href="https://apps.apple.com/us/app/puesto-app/id6762577896" target="_blank" rel="noopener noreferrer">
-          <span class="platform-badge">iPhone</span>
-          <h2>App Store</h2>
-          <p>Abre la App Store desde tu iPhone para instalar la app y gestionar tus citas desde cualquier lugar.</p>
-          <span class="store-button">Descargar para iOS</span>
-        </a>
+      <div class="delete-account-preview" aria-label="Captura de pantalla de eliminar cuenta">
+        <div class="phone-shell delete-account-shell">
+          <img src="delete_account.PNG" alt="Pantalla de perfil con opción para eliminar cuenta" class="phone-img delete-account-image" />
+        </div>
       </div>
     </section>
-
-    <p class="download-note">Nota: estos botones están conectados temporalmente a Google Play y App Store. Sustituye esas URLs por las fichas reales de tu app cuando estén publicadas.</p>
   </main>
 
   <footer>
@@ -63,13 +77,13 @@
             <li><a href="index.html#features">Funciones</a></li>
             <li><a href="index.html#feedback">Feedback</a></li>
             <li><a href="Politica_Privacidad_Puesto.pdf" target="_blank" rel="noopener noreferrer">Privacidad</a></li>
-            <li><a href="delete-account.html">Eliminar cuenta</a></li>
           </ul>
         </div>
 
         <div class="footer-links">
-          <h4>Contacto</h4>
+          <h4>Cuenta</h4>
           <ul>
+            <li><a href="delete-account.html">Eliminar cuenta</a></li>
             <li><a href="mailto:diegodksanchez@gmail.com">diegodksanchez@gmail.com</a></li>
             <li><a href="index.html">Sitio principal</a></li>
           </ul>
@@ -79,7 +93,6 @@
       <div class="footer-bottom">
         <p>© 2025 Puesto App · Todos los derechos reservados</p>
         <div class="made-sv">
-          <span class="flag">🇸🇻</span>
           Hecho con orgullo en El Salvador
         </div>
       </div>
