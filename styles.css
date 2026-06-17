@@ -431,11 +431,6 @@ section {
   border: 1.5px solid rgba(34, 197, 94, 0.25);
 }
 
-.compare-emoji {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
-}
-
 .compare-card h3 {
   font-family: var(--font);
   font-weight: 800;
@@ -446,25 +441,18 @@ section {
 }
 
 .compare-card ul {
-  list-style: none;
+  list-style: disc;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-left: 18px;
 }
 
 .compare-card li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
   font-size: 0.9rem;
   color: var(--ink-muted);
   line-height: 1.55;
   font-weight: 500;
-}
-
-.compare-card li .icon {
-  flex-shrink: 0;
-  margin-top: 1px;
 }
 
 .compare-divider {
@@ -529,29 +517,6 @@ section {
 
 .feat-card:hover::before {
   opacity: 1;
-}
-
-.feat-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 22px;
-}
-
-.feat-icon.teal {
-  background: rgba(34, 197, 94, 0.1);
-}
-
-.feat-icon.navy {
-  background: rgba(15, 52, 96, 0.1);
-}
-
-.feat-icon.orange {
-  background: rgba(249, 115, 22, 0.1);
 }
 
 .feat-card h3 {
@@ -1308,32 +1273,6 @@ footer {
   color: var(--emerald-light);
 }
 
-.social-links {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.social-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.9rem;
-  transition: background 0.2s, color 0.2s;
-}
-
-.social-btn:hover {
-  background: var(--emerald);
-  color: #fff;
-}
-
 .footer-bottom {
   margin-top: 28px;
   display: flex;
@@ -1355,10 +1294,6 @@ footer {
   font-size: 0.78rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.4);
-}
-
-.flag {
-  font-size: 1.1rem;
 }
 
 @media (max-width: 900px) {
