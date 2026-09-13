@@ -22,7 +22,7 @@ with ThreadingHTTPServer(('127.0.0.1', 0), partial(QuietHandler, directory=str(r
             page.route('https://fonts.googleapis.com/**', lambda route: route.abort())
             cases = [('', None), ('?establishmentId=', None), ('?establishmentId=abc123', 'abc123'), ('?establishmentId=%20caf%C3%A9%2F%3F%23%26%25%2B%20', ' café/?#&%+ '), ('?establishmentId=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E', '<img src=x onerror=alert(1)>')]
             from urllib.parse import unquote
-            for width in [390, 1440]:
+            for width in [320, 390, 768, 1440]:
                 page.set_viewport_size({'width': width, 'height': 900})
                 for query, expected in cases:
                     page.goto(f'http://127.0.0.1:{server.server_port}/descarga.html' + query)
@@ -32,6 +32,14 @@ with ThreadingHTTPServer(('127.0.0.1', 0), partial(QuietHandler, directory=str(r
                         href = button.get_attribute('href')
                         assert href.startswith('puesto://app/establishment/')
                         assert unquote(href.split('/establishment/')[1]) == expected
+                        page.evaluate('document.getAnimations().filter(animation => Number.isFinite(animation.effect.getComputedTiming().endTime)).forEach(animation => animation.finish())')
+                        primary = button.bounding_box()
+                        stores = page.locator('.download-store-grid').bounding_box()
+                        assert primary['y'] + primary['height'] < stores['y']
+                        assert primary['y'] + primary['height'] < 900
+                        assert primary['height'] >= 48
+                        assert abs(primary['x'] + primary['width'] / 2 - width / 2) < 2
+                        assert page.locator('#install-help').is_visible()
                     assert page.locator('.store-card.android').is_visible()
                     assert page.locator('.store-card.ios').is_visible()
                     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
@@ -39,8 +47,10 @@ with ThreadingHTTPServer(('127.0.0.1', 0), partial(QuietHandler, directory=str(r
             assert not errors, errors
             page.goto(f'http://127.0.0.1:{server.server_port}/descarga.html?establishmentId=abc123')
             page.screenshot(path='/tmp/puesto-download-desktop.png', full_page=True, animations='disabled')
+            page.set_viewport_size({'width': 390, 'height': 844})
+            page.screenshot(path='/tmp/puesto-download-mobile.png', full_page=True, animations='disabled')
             browser.close()
-            print('Browser: 10 desktop/mobile cases passed; stores visible, ID preserved, no overflow or JS errors')
+            print('Browser: 20 desktop/mobile cases passed; stores visible, ID preserved, no overflow or JS errors')
     finally:
         server.shutdown()
         thread.join()
