@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="download.js" defer></script>
 </head>
 <body class="download-page">
   <nav>
@@ -26,6 +27,13 @@
           Descarga disponible
         </div>
         <h1>Descarga Puesto y empieza a agendar desde tu celular</h1>
+        <div id="establishment-actions" hidden>
+          <p id="open-app-help">¿Ya tienes Puesto instalado? Toca “Abrir en Puesto” para ver este establecimiento. Este botón requiere que la app esté instalada.</p>
+          <div class="download-actions">
+            <a id="open-establishment" class="btn-primary" aria-describedby="open-app-help install-help">Abrir en Puesto</a>
+          </div>
+          <p id="install-help">Si aún no tienes Puesto, descárgalo con los botones de esta página. Después de instalarlo, vuelve a esta página y toca “Abrir en Puesto”, o escanea el QR de nuevo.</p>
+        </div>
       </div>
 
       <div class="download-store-grid">
